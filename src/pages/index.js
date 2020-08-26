@@ -1,6 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
-import BoldText from "../components/boldtext"
+import Layout from "../components/Layout"
+import BoldText from "../components/BoldText"
 
 export default () => {
   return(

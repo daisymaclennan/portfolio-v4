@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import BlogContent from '../components/BlogContent'
 import PostHeader from '../components/PostHeader'
-import Tag from '../components/tag'
+import Tag from '../components/Tag'
 import StyledLink from '../components/StyledLink'
 
 export default function Template({

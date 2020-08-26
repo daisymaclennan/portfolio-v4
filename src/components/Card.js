@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import Tag from './tag'
+import Tag from './Tag'
 
 const Card = ({ className , node}) => (
     <div className={ className } key={node.id}>
