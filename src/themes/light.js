@@ -7,3 +7,5 @@ const lightTheme = {
         highlight: '#000000'
     }
 }
+
+export default lightTheme

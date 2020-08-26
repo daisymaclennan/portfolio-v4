@@ -2,13 +2,41 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const Nav = ({ className, navOpen, setNavOpen }) => (
+const Nav = ({ className, navOpen, setNavOpen}) => (
     <div className={ className }>
         <ul>
-            <li><Link to="/" activeClassName="active">Me</Link></li>
-            <li><Link to="/skills" activeClassName="active">Skills</Link></li>
-            <li><Link to="/projects" activeClassName="active">Projects</Link></li>
-            <li><Link to="/insights" activeClassName="active">Insights</Link></li>
+            <li>
+                <Link 
+                    to="/" 
+                    activeClassName="active"
+                >
+                    Me
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/skills" 
+                    activeClassName="active"
+                >
+                    Skills
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/projects" 
+                    activeClassName="active"
+                >
+                    Projects
+                </Link>
+            </li>
+            <li>
+                <Link 
+                    to="/insights" 
+                    activeClassName="active"
+                >
+                    Insights
+                </Link>
+            </li>
         </ul>
     </div>
 )
@@ -30,7 +58,7 @@ ul{
         a{
             text-decoration: none;
             text-transform: uppercase;
-            color: black;
+            color: ${props => props.theme.colors.text};
         }
     }
 }
@@ -45,7 +73,7 @@ ul{
     ${props => props.navOpen && `
         display: block;
     `}
-    background: black;
+    background: ${props => props.theme.colors.highlight};
     height: 100vh;
     width: 100vw;
     top: 0;
@@ -59,7 +87,7 @@ ul{
             text-align: center;
             
             a{
-                color: white;
+                color: ${props => props.theme.colors.background};
             }
         }
     }

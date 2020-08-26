@@ -23,14 +23,13 @@ const StyledSpinningName = styled(SpinningName)`
         z-index: 2;
 
         path{
-            fill: #000000;
-
-            ${props => props.navOpen && `
-                fill: #ffffff;
-            `}
+            fill: ${props => props.theme.colors.highlight};
         }
 
         @media screen and (max-width: 1000px){
+            ${props => props.navOpen && `
+                fill: ${props.theme.colors.background};
+            `}
             height: auto;
             width: 35vw;
             left: -8vw;

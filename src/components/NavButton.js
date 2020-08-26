@@ -30,7 +30,7 @@ const StyledNavButton = styled(NavButton)`
 
     ${props => props.navOpen && `
         span{
-            background: white;
+            background: ${props => props.theme.colors.highlight};
         }
         span:first-of-type{
             transform: rotate(45deg) translate(9px, 8.5px);

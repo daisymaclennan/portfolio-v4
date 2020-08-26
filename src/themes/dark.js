@@ -7,3 +7,5 @@ const darkTheme = {
         highlight: '#FFFFFF'
     }
 }
+
+export default darkTheme

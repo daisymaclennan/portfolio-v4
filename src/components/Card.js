@@ -7,6 +7,9 @@ const Card = ({ className , node}) => (
     <div className={ className } key={node.id}>
         <Link to={node.frontmatter.slug}>
             <div className="tags">
+                {node.fileAbsolutePath.includes("projects") && (
+                    <Tag green>Project</Tag>
+                )}
                 {node.frontmatter.categories.map((cat) => (
                     <Tag>{cat}</Tag>
                     
@@ -14,15 +17,11 @@ const Card = ({ className , node}) => (
             </div>
             <div class="row">
                 <h2>{node.frontmatter.title}</h2>
-                <svg width="30" height="38" viewBox="0 0 30 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                    <path d="M12.7567 33.0348L14.2433 34.6824C14.8728 35.3801 15.8906 35.3801 16.5134 34.6824L29.5312 20.2617C30.1607 19.5641 30.1607 18.4359 29.5312 17.7457L16.5134 3.31757C15.8839 2.61991 14.8661 2.61991 14.2433 3.31757L12.7567 4.96523C12.1205 5.6703 12.1339 6.82069 12.7835 7.51093L20.8527 16.0312H1.60714C0.716518 16.0312 0 16.8254 0 17.8125V20.1875C0 21.1746 0.716518 21.9687 1.60714 21.9687H20.8527L12.7835 30.4891C12.1272 31.1793 12.1138 32.3297 12.7567 33.0348Z" fill="black"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0">
-                    <rect width="30" height="38" fill="white" transform="matrix(1 0 0 -1 0 38)"/>
-                    </clipPath>
-                    </defs>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 38">
+                <g clipPath="url(#clip0)">
+                    <path d="M12.7567 33.0348l1.4866 1.6476c.6295.6977 1.6473.6977 2.2701 0l13.0178-14.4207c.6295-.6976.6295-1.8258 0-2.516L16.5134 3.31757c-.6295-.69766-1.6473-.69766-2.2701 0l-1.4866 1.64766c-.6362.70507-.6228 1.85546.0268 2.5457l8.0692 8.52027H1.60714C.716518 16.0312 0 16.8254 0 17.8125v2.375c0 .9871.716518 1.7812 1.60714 1.7812H20.8527l-8.0692 8.5204c-.6563.6902-.6697 1.8406-.0268 2.5457z" />
+                </g>
+                
                 </svg>
             </div>
             
@@ -39,13 +38,14 @@ const StyledCard = styled(Card)`
       height: 40px;
   }
   h2{
-      color: black;
+      color:  ${props => props.theme.colors.text};
       text-align: right;
   }
   svg{
       width: 30px;
       margin-top: 20px;
       float: right;
+      fill:  ${props => props.theme.colors.text};
   }
 
   @media screen and (max-width: 1000px){

@@ -6,10 +6,14 @@ const BlogContent = styled.div`
         font-size: 32px;
         margin-bottom: 15px;
     }
-    p{
+    p, li{
         font-size: 24px;
         font-weight: 300;
         line-height: 35px;
+    }
+
+    img{
+        width: 80%;
     }
 `
 

@@ -10,6 +10,8 @@ const Content = styled.div`
     @media screen and (min-width: 1001px){
         padding-left: 62vh;
         padding-top: 150px;    
+        max-width: 800px;
+        margin-left: auto;
     }
 `
 

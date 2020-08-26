@@ -3,11 +3,21 @@ import styled from 'styled-components'
 import lightTheme from '../themes/light'
 import darkTheme from '../themes/dark'
 
-const ThemeButtons = ({ className, theme, changeTheme }) => (
+const ThemeButtons = ({ className, theme, changeTheme, cookies,  setCookie }) => (
     <div className={ className }>
-      <button onClick={() => changeTheme( lightTheme )} aria-label="Light mode">
+      <button 
+        onClick={() => {
+          changeTheme( lightTheme )
+          setCookie('theme', lightTheme)
+        }} 
+        aria-label="Light mode">
       </button>
-      <button onClick={() => changeTheme( darkTheme )} aria-label="Dark mode">
+      <button 
+        onClick={() => {
+          changeTheme( darkTheme )
+          setCookie('theme', darkTheme)
+        }} 
+        aria-label="Dark mode">
       </button>
     </div>
 )
@@ -29,13 +39,13 @@ const StyledThemeButtons = styled(ThemeButtons)`
   }
   button:first-of-type{
     background: #FFFFFF;
-    ${props => props.theme === lightTheme && (
+    ${props => props.theme.colors.background === '#FFFFFF' && (
       `border: 1px solid #AA78ED;`
     )}
   }
   button:last-of-type{
     background: #000000;
-    ${props => props.theme === darkTheme && (
+    ${props => props.theme.colors.background === '#000000' && (
       `border: 1px solid #AA78ED;`
     )}
   }

@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import BlogContent from '../components/BlogContent'
 import PostHeader from '../components/PostHeader'
+import Tag from '../components/tag'
+import StyledLink from '../components/StyledLink'
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
@@ -13,12 +15,32 @@ export default function Template({
     <Layout>
         <div>
             <PostHeader>
+                <div>
+                    <Tag green>Project</Tag>
+                    {frontmatter.categories.map((cat) => (
+                        <Tag>{cat}</Tag>
+                      
+                    ))}
+                </div>
+                
                 <h2>{frontmatter.title}</h2>
             </PostHeader>
             
             <BlogContent
                 dangerouslySetInnerHTML={{ __html: html }}
             />
+
+            {frontmatter.link && (
+                <StyledLink to={frontmatter.link}>Take a look</StyledLink>
+            )}
+
+            {frontmatter.video && (
+                <StyledLink to={frontmatter.video}>Video</StyledLink>
+            )}
+
+            {frontmatter.github && (
+                <StyledLink to={frontmatter.github}>View me on GitHub</StyledLink>
+            )}
         </div>
     </Layout>
     
@@ -32,6 +54,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         slug
         title
+        categories
+        link
+        video
       }
     }
   }

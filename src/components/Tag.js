@@ -15,13 +15,17 @@ const Tag = styled.span`
     text-decoration: none;
     color: black;
 
-    background-color: #88ED78;
+    background-color: ${props => props.theme.colors.primary};
     border-radius: 20px;
 
     @media screen and (max-width: 1000px){
         font-size: 14px;
         line-height: 16px;
     }
+
+    ${props => props.green && `
+        background-color: ${props => props.theme.colors.secondary};
+    `}
 `
 
 export default Tag

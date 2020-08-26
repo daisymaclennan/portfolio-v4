@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Helmet } from "react-helmet"
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { useCookies } from 'react-cookie'
 import SpinningName from './SpinningName'
 import ThemeButtons from './ThemeButtons'
 import Content from './Content'
@@ -30,7 +31,8 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 20px;
     margin-right: 20px;
     font-family: raleway;
-    
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.text};
   }
   h2{
     font-size: 48px;
@@ -68,8 +70,19 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
-    const [theme, changeTheme] = useState(lightTheme)
+    const [cookies, setCookie] = useCookies();
+    const startingTheme = function(){
+      if(cookies.theme){
+        return cookies.theme
+      }else{
+        return lightTheme
+      }
+    }                           
+    const [theme, changeTheme] = useState(startingTheme)
     const [navOpen, setNavOpen] = useState(false);
+    
+    console.log(cookies.theme)
+
     return(
         <div>
             <Helmet>
@@ -77,21 +90,18 @@ const Layout = ({ children }) => {
                 <title>Daisy Maclennan Portfolio</title>
             </Helmet>
             <ThemeProvider theme={ theme } >
-                <GlobalStyle />
+                
                 <SpinningName navOpen={ navOpen } />
-                <ThemeButtons theme={ theme } changeTheme={ changeTheme } />
+                <ThemeButtons theme={ theme } changeTheme={ changeTheme } cookies={ cookies } setCookie={ setCookie } />
                 <NavButton navOpen={navOpen} setNavOpen={setNavOpen} />
-                <Nav navOpen={navOpen} setNavOpen={setNavOpen} />
+                <Nav navOpen={navOpen} setNavOpen={setNavOpen} theme={ theme } />
                 <Content>
                     { children }
                 </Content>
+                <GlobalStyle />
             </ThemeProvider>
         </div>
     )
 }
 
 export default Layout
-
-
-/*background: ${props => props.theme.colors.background};
-    color: ${props => props.theme.colors.text};*/
