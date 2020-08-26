@@ -15,6 +15,17 @@ const BlogContent = styled.div`
     img{
         width: 80%;
     }
+
+    @media screen and (max-width: 1000px){
+        h2, h3{
+            font-size: 24px;
+            margin-bottom: 15px;
+        } 
+
+        p, li{
+            font-size: 18px;
+        }
+    }
 `
 
 export default BlogContent

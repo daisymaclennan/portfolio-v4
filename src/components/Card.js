@@ -60,6 +60,7 @@ const StyledCard = styled(Card)`
       }
       h2{
           margin-right: 20px;
+          text-align: left;
       }
       .row{
           display: flex;

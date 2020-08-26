@@ -22,7 +22,7 @@ const StyledNavButton = styled(NavButton)`
     justify-content: space-between;
     
     span{
-        background: #000000;
+        background: ${props => props.theme.colors.highlight};
         height: 4px;
         width: 100%;
         transition: 0.25s ease-in-out;  
@@ -30,7 +30,7 @@ const StyledNavButton = styled(NavButton)`
 
     ${props => props.navOpen && `
         span{
-            background: ${props => props.theme.colors.highlight};
+            background: ${props.theme.colors.background}!important;
         }
         span:first-of-type{
             transform: rotate(45deg) translate(9px, 8.5px);

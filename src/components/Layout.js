@@ -54,7 +54,7 @@ const GlobalStyle = createGlobalStyle`
   }
   @media screen and (max-width: 1000px){
     h2{
-        font-size: 24px;
+        font-size: 28px;
       }
     h3{
         font-size: 14px;

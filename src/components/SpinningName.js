@@ -27,9 +27,11 @@ const StyledSpinningName = styled(SpinningName)`
         }
 
         @media screen and (max-width: 1000px){
-            ${props => props.navOpen && `
-                fill: ${props.theme.colors.background};
+            path{
+                ${props => props.navOpen && `
+                fill: ${props.theme.colors.background}!important;
             `}
+            }
             height: auto;
             width: 35vw;
             left: -8vw;
