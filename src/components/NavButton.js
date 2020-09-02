@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const NavButton = ({ className, navOpen, setNavOpen }) => (
-    <div className={ className } onClick={() => setNavOpen(!navOpen)}>
+    <button className={ className } onClick={() => setNavOpen(!navOpen)}>
         <span></span>
         <span></span>
         <span></span>
-    </div>
+    </button>
 )
 
 const StyledNavButton = styled(NavButton)`
@@ -16,7 +16,10 @@ const StyledNavButton = styled(NavButton)`
     position: fixed;
     right: 20px;
     top: 20px;
-    z-index: 2;   
+    z-index: 2; 
+    
+    background: rgba(0, 0, 0, 0);  
+    border: 0;
 
     flex-direction: column;
     justify-content: space-between;

@@ -38,6 +38,9 @@ const Nav = ({ className, navOpen, setNavOpen}) => (
                 </Link>
             </li>
         </ul>
+        <div>
+            
+        </div>
     </div>
 )
 
