@@ -86,7 +86,9 @@ const Layout = ({ children }) => {
     return(
         <div>
             <Helmet>
-                <meta charSet="utf-8" lang="en" name="Daisy Maclennann Web Development Portfolio" />
+                <meta charSet="utf-8" />
+                <meta lang="en" />
+                <meta name="description" content="Daisy Maclennann Web Development Portfolio" />
                 <title>Daisy Maclennan Portfolio</title>
             </Helmet>
             <ThemeProvider theme={ theme } >

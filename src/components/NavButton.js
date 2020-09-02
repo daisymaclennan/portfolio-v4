@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const NavButton = ({ className, navOpen, setNavOpen }) => (
-    <button className={ className } onClick={() => setNavOpen(!navOpen)} aria-label="Toggle navigation menu" >
+    <div className={ className } onClick={() => setNavOpen(!navOpen)} aria-label="Toggle navigation menu" >
         <span></span>
         <span></span>
         <span></span>
-    </button>
+    </div>
 )
 
 const StyledNavButton = styled(NavButton)`
