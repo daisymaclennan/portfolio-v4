@@ -8,7 +8,7 @@ const Card = ({ className , node}) => (
         <Link to={node.frontmatter.slug}>
             <div className="tags">
                 {node.fileAbsolutePath.includes("projects") && (
-                    <Tag green>Project</Tag>
+                    <Tag css={`background-color: ${props => props.theme.colors.secondary}`}>Project</Tag>
                 )}
                 {node.frontmatter.categories.map((cat) => (
                     <Tag>{cat}</Tag>

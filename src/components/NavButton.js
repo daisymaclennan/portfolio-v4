@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const NavButton = ({ className, navOpen, setNavOpen }) => (
-    <button className={ className } onClick={() => setNavOpen(!navOpen)}>
+    <button className={ className } onClick={() => setNavOpen(!navOpen)} aria-label="Toggle navigation menu" >
         <span></span>
         <span></span>
         <span></span>
@@ -17,7 +17,7 @@ const StyledNavButton = styled(NavButton)`
     right: 20px;
     top: 20px;
     z-index: 2; 
-    
+
     background: rgba(0, 0, 0, 0);  
     border: 0;
 

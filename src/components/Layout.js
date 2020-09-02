@@ -86,15 +86,26 @@ const Layout = ({ children }) => {
     return(
         <div>
             <Helmet>
-                <meta charSet="utf-8" />
+                <meta charSet="utf-8" lang="en" name="Daisy Maclennann Web Development Portfolio" />
                 <title>Daisy Maclennan Portfolio</title>
             </Helmet>
             <ThemeProvider theme={ theme } >
-                
                 <SpinningName navOpen={ navOpen } />
-                <ThemeButtons theme={ theme } changeTheme={ changeTheme } cookies={ cookies } setCookie={ setCookie } />
-                <NavButton navOpen={navOpen} setNavOpen={setNavOpen} />
-                <Nav navOpen={navOpen} setNavOpen={setNavOpen} theme={ theme } />
+                <ThemeButtons 
+                  theme={ theme } 
+                  changeTheme={ changeTheme } 
+                  setCookie={ setCookie }
+                  navOpen={navOpen} 
+                 />
+                <NavButton 
+                  navOpen={navOpen} 
+                  setNavOpen={setNavOpen} 
+                 />
+                <Nav 
+                  navOpen={navOpen} 
+                  setNavOpen={setNavOpen} 
+                  theme={ theme }
+                 />
                 <Content>
                     { children }
                 </Content>

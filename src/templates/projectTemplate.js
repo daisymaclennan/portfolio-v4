@@ -16,7 +16,7 @@ export default function Template({
         <div>
             <PostHeader>
                 <div>
-                    <Tag green>Project</Tag>
+                    <Tag css={`background-color: ${props => props.theme.colors.secondary}`}>Project</Tag>
                     {frontmatter.categories.map((cat) => (
                         <Tag>{cat}</Tag>
                       
@@ -27,7 +27,7 @@ export default function Template({
             </PostHeader>
             
             <BlogContent
-                dangerouslySetInnerHTML={{ __html: html }}
+                dangerouslySetInnerHTML={{ __html: html }}  
             />
 
             {frontmatter.link && (

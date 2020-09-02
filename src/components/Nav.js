@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 const Nav = ({ className, navOpen, setNavOpen}) => (
-    <div className={ className }>
+    <header className={ className }>
         <ul>
             <li>
                 <Link 
@@ -41,7 +41,7 @@ const Nav = ({ className, navOpen, setNavOpen}) => (
         <div>
             
         </div>
-    </div>
+    </header>
 )
 
 const StyledNav = styled(Nav)`

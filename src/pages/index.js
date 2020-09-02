@@ -6,7 +6,7 @@ export default () => {
   return(
     <Layout>
       <p>I am a <BoldText primary>perfectionistic</BoldText> front end developer with a passion for problem solving and pretty websites!</p>
-      <img src="/holiday-pic.jpg" />
+      <img src="/holiday-pic.jpg" alt="The only slightly aesthetic photo I could find LOL" />
     </Layout>
   )
 }
